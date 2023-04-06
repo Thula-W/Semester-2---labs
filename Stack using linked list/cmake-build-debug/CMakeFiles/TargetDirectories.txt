@@ -1,0 +1,3 @@
+C:/Users/thula_/CLionProjects/Stack using linked list/cmake-build-debug/CMakeFiles/Stack_using_linked_list.dir
+C:/Users/thula_/CLionProjects/Stack using linked list/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/thula_/CLionProjects/Stack using linked list/cmake-build-debug/CMakeFiles/rebuild_cache.dir
