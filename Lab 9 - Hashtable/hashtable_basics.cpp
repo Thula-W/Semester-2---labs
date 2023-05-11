@@ -1,8 +1,6 @@
 #include <cstring>
 #include <string>
 #include <iostream>
-
-
 using namespace std;
 
 struct HashTable{
@@ -14,6 +12,7 @@ struct HashTable{
             password[i].clear();
         }
     }
+	
     bool isFull(){
         bool full = true;
         int count = 0;
@@ -24,24 +23,23 @@ struct HashTable{
         }
         return full;
     }
+	
     int hashfunc(string user_name){
         int sum = 0;
         int hash = 0;
 	//add your code below
         for(int i = 0;i< user_name.length(); i++){
             sum += int(user_name[i]);
-
         }
-	
-	
         hash = sum % MAX_LENGTH;
-
         return hash;
     }
+	
     bool is_slot_empty(int hash){
         bool empty = password[hash].empty();
         return empty;
     }
+	
     void insert(string user_name,string user_password){
         int hash;
         bool empty;
@@ -53,24 +51,21 @@ struct HashTable{
         else{
             cout<<"Cannot add the user name"<<endl;
         }
-	//add an if condition to complete the code here
-        
-
     }
+	
     void hash_lookup(string user_name){
         int hash;
         bool empty;
         hash = hashfunc(user_name);
         empty = is_slot_empty(hash);
-	//add an if condition to complete the code here
 	    if (empty){
             cout<<"There is no element"<<endl;
         }
 	    else{
             cout<<user_name<<" : "<< password[hash]<<endl;
-        }
-	
+        }	
     }
+	
     void delete_item(string user_name){
         int hash;
         bool empty;
@@ -83,14 +78,13 @@ struct HashTable{
             password[hash].clear();
             cout<<"User deleted\n";
         }
-
     }
+	
     void print_hashtable(){
         for(int i=0;i<MAX_LENGTH;i++){
             cout<<"["<<i<<"]-->"<<password[i]<<"\n";
         }
     }
-
 };
 
 int main(){
@@ -127,16 +121,14 @@ int main(){
             hashtbl->hash_lookup(user_name);
             break;
         case 4:
+	    //printing hashtable	
             hashtbl->print_hashtable();
             break;
         case -1:
             //exit
             cout << "Exiting...\n";
-            break;
-        
-        }
-
-    
+            break;        
+	}
     }
     return 0;
 }
