@@ -16,17 +16,17 @@ struct HashTable{
         }
         return full;
     }
+    
     int hashfunc(string user_name){
         int sum = 0;
         int hash = 0;
         for(int i = 0;i< user_name.length(); i++){
             sum += int(user_name[i]);
-
         }
         hash = sum % MAX_LENGTH;
-
         return hash;
     }
+    
     bool is_slot_empty(int hash){
         bool empty;
         if(password[hash].head==NULL){
@@ -37,6 +37,7 @@ struct HashTable{
         }
         return empty;
     }
+    
     void insert(string user_name,string user_password){
         int hash;
         bool empty;
@@ -44,18 +45,19 @@ struct HashTable{
         empty = is_slot_empty(hash);
         if(password[hash].length<MAX_CHAIN_LENGTH){
             password[hash].insert(user_name.data(),user_password.data());
-
         }
         else{
             cout<<"Linked List reached MAX CAP!\n";
         }
     }
+    
     void print_hashtable(){
         for(int i=0;i<MAX_LENGTH;i++){
             cout<<"["<<i<<"]-->";
             password[i].print_list();
         }
     }
+    
     void hash_lookup(string user_name){
         int hash;
         bool empty;
@@ -66,7 +68,6 @@ struct HashTable{
         }
         else{
             password[hash].search(user_name);
-
         }
     }
 };
@@ -97,10 +98,11 @@ int main(){
             hashtbl->hash_lookup(user_name);
             break;
         case 3:
+            //printing hashtable
             hashtbl->print_hashtable();
             break;
         case -1:
-            /* hash lookup password*/
+            //exit
             hashtbl->print_hashtable();
             cout << "Exiting...\n";
             break;
