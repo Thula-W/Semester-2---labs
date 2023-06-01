@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int minDistance (vector<int> distance , vector<bool> visited){
@@ -29,9 +28,9 @@ vector<int> dijkstra (int n ,int start , vector<vector<int>> weightMatrix){
     for (int i = 0 ; i<n ; i++){
         int minimum = minDistance(distance , visited);
         visited[minimum]= true;
-        for  (int i = 0 ; i<n ; i++) {
-            if (weightMatrix[minimum][i] != 0 && distance[i] > distance[minimum] + weightMatrix[minimum][i]) {
-                distance[i] = distance[minimum] + weightMatrix[minimum][i];
+        for  (int j = 0 ; j<n ; j++) {
+            if (weightMatrix[minimum][j] != 0 && distance[j] > distance[minimum] + weightMatrix[minimum][j]) {
+                distance[j] = distance[minimum] + weightMatrix[minimum][j];
             }
         }
     }
