@@ -1,0 +1,3 @@
+C:/Users/thula_/CLionProjects/SSSP lab/cmake-build-debug/CMakeFiles/SSSP_lab.dir
+C:/Users/thula_/CLionProjects/SSSP lab/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/thula_/CLionProjects/SSSP lab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
